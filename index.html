@@ -4,28 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&dswapisplay="
+      rel="stylesheet"
+    />
     <title>Password Generator</title>
   </head>
-  <body>
-    <div id="container">
+  <body
+    class="h-screen flex flex-col justify-center items-center"
+    style="
+      background: linear-gradient(
+        231deg,
+        rgba(22, 6, 40, 1) 0%,
+        rgba(52, 28, 79, 1) 50%,
+        rgba(88, 7, 125, 1) 100%
+      );
+    "
+  >
+    <style>
+      *,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+    </style>
+
+    <div id="container" class="w-11/12 max-w-[450px]">
       <!-- Heading -->
-      <h1>Password Generator</h1>
+      <h1
+        class="text-pl-white opacity-75 leading-44 uppercase text-center text-[25px]"
+      >
+        Password Generator
+      </h1>
 
       <!-- Password Suggestion bar -->
-      <div class="display-container">
-        <input readonly placeholder="Password" data-passwordDisplay />
-        <button data-copy>
-          <span data-copyMsg></span>
+      <div
+        class="display-container relative bg-dk-violet rounded-2xl border-b-[5px] border-b-lt-violet2 my-4 pt-[0.35rem]"
+      >
+        <input
+          class="placeholder:text-vb-yellow placeholder:absolute placeholder:top-[50%] placeholder:left-4 placeholder:font-[1.5rem]tracking-[1px] uppercase w-full bg-transparent outline-none py-[1.15rem] px-[1rem] leading-7 pr-[3.25rem] font-semibold placeholder:opacity-70 border-none translate-y-[-0.5rem] text-vb-yellow"
+          readonly
+          placeholder="Password"
+          data-passwordDisplay
+        />
+        <button
+          data-copy
+          class="absolute top-[50%] right-6 translate-y-[-0.5rem] bg-transparent"
+        >
+          <span
+            data-copyMsg
+            class="tool"
+          ></span>
           <img src="copy.svg" alt="copy" width="23px" height="23px" />
         </button>
       </div>
 
       <!-- Password Generator section -->
-      <div class="input-container">
+      <div
+        class="input-container px-6 py-6 bg-dk-violet rounded-[1rem] w-full border-b-[5px] border-b-lt-violet2"
+      >
         <!-- Password length section -->
-        <div class="length-container">
-          <p>Password Length</p>
-          <p data-lengthNumber></p>
+        <div class="length-container flex justify-between items-center">
+          <p class="text-pl-white text-[1.5rem]">Password Length</p>
+          <p
+            data-lengthNumber
+            class="text-vb-yellow font-semibold text-[1.5rem]"
+          ></p>
         </div>
 
         <!-- Slider -->
@@ -33,40 +79,80 @@
           type="range"
           min="1"
           max="20"
-          class="slider"
+          class="slider appearance-none w-full cursor-pointer bg-lt-violet rounded-2xl my-[1.5rem] bg-no-repeat h-[0.75rem]"
           step="1"
           data-lengthSlider
         />
 
         <!-- Checkboxes  -->
-        <div>
-          <input type="checkbox" id="uppercase" />
-          <label for="uppercase">Includes Uppercase letters</label>
-        </div>
+        <div class="flex flex-col py-[1rem] text-pl-white">
+          <div>
+            <input
+              type="checkbox"
+              id="uppercase"
+              class="appearance-none w-[20px] h-[20px] checked:bg-vb-cyan checked:before:content-['✔'] checked:before:absolute checked:before:text-dk-text checked:before:text-[1.05rem] checked:before:font-semibold border-[1px] checked:before:left-[20%] checked:before:top-[-3.5px] border-vb-cyan cursor-pointer relative rounded-md mr-3 checked:before:scale-150"
+            />
+            <label
+              for="uppercase"
+              class="text-pl-white tracking-wide text-[1.2rem]"
+              >Includes Uppercase letters</label
+            >
+          </div>
 
-        <div>
-          <input type="checkbox" id="lowercase" />
-          <label for="lowercase">Includes Lowercase letters</label>
-        </div>
+          <div>
+            <input
+              type="checkbox"
+              id="lowercase"
+              class="appearance-none w-[20px] h-[20px] checked:bg-vb-cyan checked:before:content-['✔'] checked:before:absolute checked:before:text-dk-text checked:before:text-[1.05rem] checked:before:font-semibold border-[1px] checked:before:left-[20%] checked:before:top-[-3.5px] border-vb-cyan cursor-pointer relative rounded-md mr-3 checked:before:scale-150"
+            />
+            <label
+              class="text-pl-white tracking-wide text-[1.2rem]"
+              for="lowercase"
+              >Includes Lowercase letters</label
+            >
+          </div>
 
-        <div>
-          <input type="checkbox" id="numbers" />
-          <label for="numbers">Includes Numbers letters</label>
-        </div>
+          <div>
+            <input
+              type="checkbox"
+              id="numbers"
+              class="appearance-none w-[20px] h-[20px] checked:bg-vb-cyan checked:before:content-['✔'] checked:before:absolute checked:before:text-dk-text checked:before:text-[1.05rem] checked:before:font-semibold border-[1px] checked:before:left-[20%] checked:before:top-[-3.5px] border-vb-cyan cursor-pointer relative rounded-md mr-3 checked:before:scale-150"
+            />
+            <label
+              for="numbers"
+              class="text-pl-white tracking-wide text-[1.2rem]"
+              >Includes Numbers letters</label
+            >
+          </div>
 
-        <div>
-          <input type="checkbox" id="symbols" />
-          <label for="symbols">Includes Symbols letters</label>
+          <div>
+            <input
+              type="checkbox"
+              id="symbols"
+              class="appearance-none w-[20px] h-[20px] checked:bg-vb-cyan checked:before:content-['✔'] checked:before:absolute checked:before:text-dk-text checked:before:text-[1.05rem] checked:before:font-semibold border-[1px] checked:before:left-[20%] checked:before:top-[-3.5px] border-vb-cyan cursor-pointer relative rounded-md mr-3 checked:before:scale-150"
+            />
+            <label
+              for="symbols"
+              class="text-pl-white tracking-wide text-[1.2rem]"
+              >Includes Symbols letters</label
+            >
+          </div>
         </div>
 
         <!-- Password Strength section -->
-        <div class="strength-container">
-          <p>Strength</p>
-          <div data-indicator></div>
+        <div
+          class="strength-container justify-between flex items-center mt-6 mb-8"
+        >
+          <p class="text-pl-white text-[1.5rem]">Strength</p>
+          <div data-indicator class="h-6 w-6 rounded-[50%]"></div>
         </div>
 
         <!-- Generator Password button -->
-        <button class="generatebutton">Generator Password</button>
+        <button
+          class="generatebutton rounded-lg text-vb-yellow font-semibold mb-5 py-3 bg-vb-violet border-b-[5px] border-b-vb-yellow flex items-center just w-5/6 justify-center mx-auto"
+        >
+          Generator Password
+        </button>
       </div>
     </div>
 
