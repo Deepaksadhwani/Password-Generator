@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator Project</title>
 </head>
 <body>
 
@@ -48,7 +47,7 @@
 </ol>
 
 <h2>Preview:</h2>
-<img src="insert-image-url-here" alt="Password Generator Preview">
+<img src="https://i.postimg.cc/SRyLMK7g/Screenshot-from-2024-03-16-07-16-31.png" alt="Password Generator Preview">
 
 <p>Feel free to contribute to this project or reach out for any questions or feedback!</p>
 
